@@ -28,6 +28,7 @@ fun main(args: Array<String>) {
     //optional assignment
     //val something: String = readlnOrNull() ?: "0"
     //val somethingElse: String = readlnOrNull() ?: "0"
+    // not a fan of list's being returned from a function rather than being its own datatype with []
     // this is an Immutable list
     val shoppingList = listOf<String>("av", " av")
     // this is a mutable list
@@ -39,8 +40,24 @@ fun main(args: Array<String>) {
         println(shoppingList[counter])
         counter ++
     }
+
     for(i in 1..100){
         println(i)
     }
+    val e = isEven(5)
+    println(e)
+}
+// type defenitions for functions works exactly like TS so far.
+fun isEven(number: Int = 2): Boolean{
+    return number % 2 == 0;
+}
 
+// when functions operate similar to case statements in javascript. Runs the checks in order.
+fun whenFunctions(obj: Any): Any{
+    when(obj){
+        1 -> println("One")
+        5 -> println("Five")
+        "Hello" -> println("World")
+    }
+    return ""
 }
